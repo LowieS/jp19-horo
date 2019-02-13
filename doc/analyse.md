@@ -1,5 +1,10 @@
 # Analyse
 
+## Probleemstelling
+### Hoofdprobleem
+
+#### Test
+
 ## Mindmap
 
 Maak een mindmap met alle functionaliteit die je wilt voorzien in je project.
