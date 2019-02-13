@@ -3,7 +3,7 @@
 ## Probleemstelling
 
 ### Hoofdprobleem
-Robotarm besturen met een hololens en hiervoor een industriele toepassing vinden.
+We willen een robotarm maken en hiermee kunnen werken. Deze robotarm moet bestuurbaar zijn met de hololens en de digitale blokjes kunnen detecteren aan de hand van intel realsense. Het is de bedoeling dat de handelingen die de robotarm gaat doen getoond zullen worden via de hololens voordat deze in werkelijkheid plaatsvinden.
 * Maken van Robotarm
 * Robotarm laten bewegen
 * Robotarm objecten laten oppakken.
