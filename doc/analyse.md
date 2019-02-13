@@ -1,9 +1,21 @@
 # Analyse
 
 ## Probleemstelling
-### Hoofdprobleem
 
-#### Test
+### Hoofdprobleem
+Robotarm besturen met een hololens en hiervoor een industriele toepassing vinden.
+#### Maken van Robotarm
+#### Robotarm laten bewegen
+#### Robotarm objecten laten oppakken.
+#### Visualiseren op hololens
+#### robotarm besturen met de hololens
+#### Programmeren van de robotarm
+#### Detecteren van objecten met intel realsense
+#### Connectie tussen  robotarm en hololens
+#### Connectie tussen de hololens en inter realsense
+#### 
+
+
 
 ## Mindmap
 
