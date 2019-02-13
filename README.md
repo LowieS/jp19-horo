@@ -1,4 +1,4 @@
-# Smart System - *Groepnaam*
+# Smart System - Hololens Robotarm
 
 **Teammembers**
 * Lowie Spriet
