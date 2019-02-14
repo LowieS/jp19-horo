@@ -10,9 +10,9 @@ We willen een robotarm maken en hiermee kunnen werken. Deze robotarm moet bestuu
 * Visualiseren op hololens
 * robotarm besturen met de hololens
 * Programmeren van de robotarm
-* Detecteren van objecten met intel realsense
+* Detecteren van objecten met Intel realsense
 * Connectie tussen  robotarm en hololens
-* Connectie tussen de hololens en inter realsense 
+* Connectie tussen de hololens en Intel realsense 
  
 
 
@@ -23,6 +23,10 @@ Maak een mindmap met alle functionaliteit die je wilt voorzien in je project.
 Dit zal je startpunt zijn voor een verdere analyse.
 
 ## Beschrijving
+
+We gaan als groep een robotarm gebruiken en maken die als COBOT kan functioneren. De robotarm moet dus kunnen functioneren in collaboratie met een mens. 
+Dit doen we door gebruik te maken van een Hololens en Intel realsense in combinatie met de gebruiker en de robot. Het is uiteindelijk ook de bedoeling om zelf een robotarm te maken of gebruik te maken van een meer geavenceerde robotarm. 
+De arm moet de virtuele blokken, die zichtbaar zijn via de Hololens, kunnen detecteren en verplaatsen. De handelingen van de arm moeten vooraf ook weergegeven worden via de Hololens.
 
 Zet hier de beschrijving van je project. Licht de functionaliteit van het
 project toe.
