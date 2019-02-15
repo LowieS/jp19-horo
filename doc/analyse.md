@@ -24,12 +24,15 @@ Dit zal je startpunt zijn voor een verdere analyse.
 
 ## Beschrijving
 
-We gaan als groep een robotarm gebruiken en maken die als COBOT kan functioneren. De robotarm moet dus kunnen functioneren in collaboratie met een mens. 
-Dit doen we door gebruik te maken van een Hololens en Intel realsense in combinatie met de gebruiker en de robot. Het is uiteindelijk ook de bedoeling om zelf een robotarm te maken of gebruik te maken van een meer geavenceerde robotarm. 
-De arm moet de virtuele blokken, die zichtbaar zijn via de Hololens, kunnen detecteren en verplaatsen. De handelingen van de arm moeten vooraf ook weergegeven worden via de Hololens.
+Het doel van het project is om de robotarm als een COBOT te kunnen laten functioneren in combinatie met de Hololens. Om dit voor elkaar te krijgen gaan we gebruik maken van een Raspberry Pi, een arduino uno, een Hololens en een Intel Realsense.
+De camera's van de Intel Realsense worden gebruikt voor het opvangen van de bewegingen. Deze bewegingen zijn afkomstig van zowel de persoon die de opdracht uitvoert alsook de bewegingen die gemaakt worden door de robot. De camera van de Hololens zal ook gebruikt worden om de bewegingen van de gebruiker in real time te volgen. Zo krijgen we 2 camera's die dan de bewegingen van de gebruiker kunnen opvolgen en 1 die de bewegingen van de robot zal kunnen opvolgen.
+De Intel Realsense en de Hololens worden gekoppeld aan een Raspberry Pi. Deze zal de gegevens die worden verzameld door de camera's koppelen aan wat er in het virtuele beeld (dat gegenereerd en meegegeven wordt door de Hololens) aan het gebeuren is. De Pi is ook nog verbonden met een arduino uno die als aansturing dient voor de shield van de robot.
+** INSERT SHIELD
+De robot arm zal dan de virtuele blokken kunnen detecteren en dan is het de bedoeling dat met behulp van de interne servo motoren de robot kan draaien volgens 3 assen. Natuurlijk kan de robotarm deze virtuele blokken dan oppakken, verplaatsen en bewerken (?). De grijphand van de robot kan dus ook klemmen en lossen met behulp van de interne servo motoren.
 
-Zet hier de beschrijving van je project. Licht de functionaliteit van het
-project toe.
+
+
+Zet hier de beschrijving van je project. Licht de functionaliteit van het project toe.
 
 Minimaal 3000 tekens.
 
