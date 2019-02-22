@@ -19,7 +19,7 @@ We willen een robotarm maken en hiermee kunnen werken. Deze robotarm moet bestuu
 
 ## Mindmap
 
-![Getting Started](./MindMap.png)
+![Getting Started](./Mindmap.png)
 
 ## Beschrijving
 
@@ -33,9 +33,13 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 ## Hardware analyse
 
+![Getting Started](./Hardwaremap.png)
+
 Plaats hier een high level blokdiagram van de hardware. Hierin moet duidelijk worden weergegeven wat de verschillende delen zijn en hoe deze met elkaar verbonden zijn. Geef ook een woordje uitleg bij het schema
 
 ## Software analyse
+
+![Getting Started](./Softwaremap.png)
 
 Plaats hier een flow-chart van de software. Hierin moet de werking van de software duidelijk worden weergegeven. Voorzie ook de nodige uitleg.
 
