@@ -33,17 +33,163 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 ## Hardware analyse
 
-![Getting Started](./Hardwaremap.png) 
+![Getting Started](./hardware spec.jpg)
 
-NOG VERANDEREN VAN AFBEELDING
+SpringRC SR431 - Dual Output Servo
 
-Plaats hier een high level blokdiagram van de hardware. Hierin moet duidelijk worden weergegeven wat de verschillende delen zijn en hoe deze met elkaar verbonden zijn. Geef ook een woordje uitleg bij het schema
+Control Signal
+	PWM Analog
+
+Torque
+	@ 4.8V: 169.5 oz-in (12.2 kg-cm)
+
+@ 6.0V: 201.4 oz-in (14.5 kg-cm)
+
+Weight
+	2.19 oz (62.0 g)
+
+Dimentions
+	1.65×0.81×1.56 in (42.0×20.5×39.5 mm)
+
+Speed
+	@ 4.8V: 0.20 sec/60°
+
+@ 6.0V: 0.18 sec/60°
+
+Rotation Support
+	Dual Bearings
+
+Gear Material
+	Metal
+
+Rotation Range
+	180°
+
+Connector Type
+	J (aka Futaba)
+
+
+
+SpringRC SR311
+
+Control Signal
+	PWM Analog
+
+Torque
+	@ 4.8V: 43.13 oz-in (3.1 kg-cm)
+
+@ 6.0V: 52.86 oz-in (3.8 kg-cm)
+
+Weight
+	0.95 oz (27.0 g)
+
+Dimentions
+	1.23×0.65×1.13 in (31.3×16.5×28.6 mm)
+
+Speed
+	@ 4.8V: 0.14 sec/60°
+
+@ 6.0V: 0.12 sec/60°
+
+Rotation Support
+	Dual Bearings
+
+Gear Material
+	Metal
+
+Rotation Range
+	180°
+
+Connector Type
+	J (aka Futaba)
+
+Arduino uno
+Blok	spec	min	nominaal	max
+Atmega 328p	F cpu		16Mhz	
+	Werkspanning	4.8V	5V	5.2V
+				
+				
+
+Raspberry pi 3 B
+![Getting Started](./rasp.png)
+ 
+ 
+Microsoft hololens
+Optics
+ 
+•	See-through holographic lenses (waveguides)
+•	2 HD 16:9 light engines
+•	Automatic pupillary distance calibration
+•	Holographic Resolution: 2.3M total light points
+•	Holographic Density: >2.5k radiants (light points per radian)
+Sensors
+ 
+•	1 IMU
+•	4 environment understanding cameras
+•	1 depth camera
+•	1 2MP photo / HD video camera
+•	Mixed reality capture
+•	4 microphones
+•	1 ambient light sensor
+
+Human Understanding
+•	Spatial sound
+•	Gaze tracking
+•	Gesture input
+•	Voice support
+ 
+Input / Output / Connectivity
+•	Built-in speakers
+•	Audio 3.5mm jack
+•	Volume up/down
+•	Brightness up/down
+•	Power button
+•	Battery status LEDs
+•	Wi-Fi 802.11ac
+•	Micro USB 2.0
+•	Bluetooth 4.1 LE
+Power
+•	Battery Life
+•	2-3 hours of active use
+•	Up to 2 weeks of standby time
+•	Fully functional when charging
+•	Passively cooled (no fans)
+Processors
+ 
+•	Intel 32 bit architecture with TPM 2.0 support
+•	Custom-built Microsoft Holographic Processing Unit (HPU 1.0)
+
+Weight
+•	579g
+Memory
+•	64GB Flash
+•	2GB RAM
+ 
+Intel Realsense d435
+
+Essentials
+•	Product CollectionIntel® RealSense™ Cameras
+•	Code NameProducts formerly Double Springs
+•	StatusLaunched
+•	Launch DateQ1'18
+•	Depth TechnologyStereoscopic
+Operational Specifications
+•	Operating Range (Min-Max)~.11m - 10m
+•	Depth Resolution and FPS1280 X 720
+•	Depth Field of View85.2 x 58
+Supplemental Information
+•	DatasheetView now
+Components
+•	RGB SensorYes
+•	Tracking ModuleNo
+Module Specifications
+•	Dimensions90 mm x 25 mm x 25 mm
+•	System Interface Type
+
 
 ## Software analyse
 
-![Getting Started](./Softwaremap.png)
 
-Plaats hier een flow-chart van de software. Hierin moet de werking van de software duidelijk worden weergegeven. Voorzie ook de nodige uitleg.
 
 ## User stories en Engineering Tasks
 
