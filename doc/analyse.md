@@ -43,7 +43,8 @@ Plaats hier een high level blokdiagram van de hardware. Hierin moet duidelijk wo
 
 ![Getting Started](./Softwaremap.png)
 
-Plaats hier een flow-chart van de software. Hierin moet de werking van de software duidelijk worden weergegeven. Voorzie ook de nodige uitleg.
+![Getting Started](./img/Software_analyse.png)
+
 
 ## User stories en Engineering Tasks
 
