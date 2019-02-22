@@ -33,7 +33,9 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 ## Hardware analyse
 
-![Getting Started](./Hardwaremap.png)
+![Getting Started](./Hardwaremap.png) 
+
+NOG VERANDEREN VAN AFBEELDING
 
 Plaats hier een high level blokdiagram van de hardware. Hierin moet duidelijk worden weergegeven wat de verschillende delen zijn en hoe deze met elkaar verbonden zijn. Geef ook een woordje uitleg bij het schema
 
