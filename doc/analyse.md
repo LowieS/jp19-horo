@@ -43,7 +43,7 @@ Plaats hier een high level blokdiagram van de hardware. Hierin moet duidelijk wo
 
 ![Getting Started](./Softwaremap.png)
 
-![Getting Started](./img/Software_analyse.png)
+![Getting Started](./Softwareanalyse.png)
 
 werkt het?
 ## User stories en Engineering Tasks
