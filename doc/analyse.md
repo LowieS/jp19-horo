@@ -45,7 +45,7 @@ Plaats hier een high level blokdiagram van de hardware. Hierin moet duidelijk wo
 
 ![Getting Started](./img/Software_analyse.png)
 
-
+werkt het?
 ## User stories en Engineering Tasks
 
 Geef hier de userstories en engineering tasks. De beschrijving moet conform zijn met de methode zoals gezien in de lessen  van projectmanagement vn dhr Peeters.
