@@ -40,6 +40,7 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 ![Getting Started](./uno.PNG)
 ![Getting Started](./rasp.png)
 ![Getting Started](./realsense2.PNG)
+
 ![Getting Started](./realsense.PNG)
  
  
