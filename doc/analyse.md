@@ -103,10 +103,11 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 •Connector Type
 	J (aka Futaba)
 
-Arduino uno
-Blok	spec	min	nominaal	max
-Atmega 328p	F cpu		16Mhz	
-	Werkspanning	4.8V	5V	5.2V
+	Arduino uno
+
+•Atmega 328p	
+•F cpu		16Mhz	
+•Werkspanning	4.8V	5V	5.2V
 				
 				
 
