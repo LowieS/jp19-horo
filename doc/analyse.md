@@ -1,4 +1,4 @@
-# Analyse
+﻿# Analyse
 
 ## Probleemstelling
 
@@ -47,6 +47,13 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 
 ![Getting Started](./Softwareanalyse.png)
+
+
+## ROS analyse
+
+Het Robot Operating Sysytem (ROS) is gebaseerd op de Arduino die via de Raspberry-Pi bepaalde waardes aankrijgt van de hololens. De waardes dat de Arduino aankrijgt zullen 6 getallen zijn die elk voor 1 van de 6 servo motoren zullen zijn. Zo krijgt elke servo motor een bepaalde waarde die een hoek voorstelt dat deze servo motor moet aannemen om de gewenste beweging te maken.
+
+De Arduino zal deze waardes kunnen doorsturen via een shield dat aangesloten staat op zijn pinnen. Dit shield bevat 6 connectoren voor de 6 servo motoren van de arm. De test arm kunnen we nu nog makkelijk aansturen via de bijgeleverde library hiervan maar later bij de zelfgemaakte/samengestelde robot arm zullen we hiervoor zelf een library moeten schrijven of allersinds zelf software moeten voorzien om deze werkend te krijgen.
 
 ## User stories en Engineering Tasks
 
