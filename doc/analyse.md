@@ -34,14 +34,12 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 ## Hardware analyse
 
 ![Getting Started](./hardware_spec.jpg)
-![Getting Started](./servos.PNG)
-![Getting Started](./hololens.PNG)
+![Getting Started](./deel1.PNG)
+![Getting Started](./deel2.PNG)
 
-![Getting Started](./uno.PNG)
-![Getting Started](./rasp.png)
-![Getting Started](./realsense2.PNG)
+![Getting Started](./deel3.PNG)
+![Getting Started](./deel4.PNG)
 
-![Getting Started](./realsense.PNG)
  
  
 
