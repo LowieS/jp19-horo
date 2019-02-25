@@ -33,74 +33,74 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 ## Hardware analyse
 
-![Getting Started](./hardware spec.jpg)
+![Getting Started](./hardware_spec.jpg)
 
-SpringRC SR431 - Dual Output Servo
+	SpringRC SR431 - Dual Output Servo
 
-Control Signal
+•Control Signal
 	PWM Analog
 
-Torque
+•Torque
 	@ 4.8V: 169.5 oz-in (12.2 kg-cm)
 
 @ 6.0V: 201.4 oz-in (14.5 kg-cm)
 
-Weight
+•Weight
 	2.19 oz (62.0 g)
 
-Dimentions
+•Dimentions
 	1.65×0.81×1.56 in (42.0×20.5×39.5 mm)
 
-Speed
+•Speed
 	@ 4.8V: 0.20 sec/60°
 
 @ 6.0V: 0.18 sec/60°
 
-Rotation Support
+•Rotation Support
 	Dual Bearings
 
-Gear Material
+•Gear Material
 	Metal
 
-Rotation Range
+•Rotation Range
 	180°
 
-Connector Type
+•Connector Type
 	J (aka Futaba)
 
 
 
-SpringRC SR311
+	SpringRC SR311
 
-Control Signal
+•Control Signal
 	PWM Analog
 
-Torque
+•Torque
 	@ 4.8V: 43.13 oz-in (3.1 kg-cm)
 
 @ 6.0V: 52.86 oz-in (3.8 kg-cm)
 
-Weight
+•Weight
 	0.95 oz (27.0 g)
 
-Dimentions
+•Dimentions
 	1.23×0.65×1.13 in (31.3×16.5×28.6 mm)
 
-Speed
+•Speed
 	@ 4.8V: 0.14 sec/60°
 
 @ 6.0V: 0.12 sec/60°
 
-Rotation Support
+•Rotation Support
 	Dual Bearings
 
-Gear Material
+•Gear Material
 	Metal
 
-Rotation Range
+•Rotation Range
 	180°
 
-Connector Type
+•Connector Type
 	J (aka Futaba)
 
 Arduino uno
@@ -110,11 +110,11 @@ Atmega 328p	F cpu		16Mhz
 				
 				
 
-Raspberry pi 3 B
+	Raspberry pi 3 B
 ![Getting Started](./rasp.png)
  
  
-Microsoft hololens
+	Microsoft hololens
 Optics
  
 •	See-through holographic lenses (waveguides)
@@ -165,7 +165,7 @@ Memory
 •	64GB Flash
 •	2GB RAM
  
-Intel Realsense d435
+	Intel Realsense d435
 
 Essentials
 •	Product CollectionIntel® RealSense™ Cameras
