@@ -42,9 +42,9 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 ![Getting Started](./deel3.PNG)
 ![Getting Started](./deel4.PNG)
-###Hardware argumentaie
+### Hardware argumentaie
 ![Getting Started](./argumenatie1.PNG)
-![Getting Started](./argumenatie2.PNG)
+![Getting Started](./argumenatie2PNG.PNG)
 
  
  
