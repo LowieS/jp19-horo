@@ -35,7 +35,7 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 ### Hardware diagram
 
-![Hardware map](./img/img_analyse/Hardwaremap.PNG)
+![Hardware map](./img/img_analyse/Hardwaremap.png)
 ![Hardware diagram](./img/img_analyse/hardware_spec.jpg)
 
 ### Hardware argumentaie
@@ -53,21 +53,21 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 ![Software analyse](./img/img_analyse/Softwareanalyse.png)
 
-###State diagram
- ![State diagram](./img/img_analyse/Softwaremap.PNG)
+### State diagram
+ ![State diagram](./img/img_analyse/Softwaremap.png)
 
- ###Flowchart
- ####Volledige flowchart
- ![Flowchart](./img/img_analyse/Flowchart.PNG)
+ ### Flowchart
+ #### Volledige flowchart
+ ![Flowchart](./img/img_analyse/Flowchart.png)
 
- ####Flowchart van de Hololens
- ![Hololens Flowchart](./img/img_analyse/HoloLensflow.PNG)
+ #### Flowchart van de Hololens
+ ![Hololens Flowchart](./img/img_analyse/HoloLensflow.png)
 
- ####Flowchart Raspberry PI
- ![raspberry flowchart](./img/img_analyse/raspberryflow.PNG)
+ #### Flowchart Raspberry PI
+ ![raspberry flowchart](./img/img_analyse/raspberryflow.png)
 
- ####Flowchart Arduino
- ![arduino flowchart](./img/img_analyse/ArduinoFlow.PNG)
+ #### Flowchart Arduino
+ ![arduino flowchart](./img/img_analyse/ArduinoFlow.png)
 
 
 ## ROS analyse
