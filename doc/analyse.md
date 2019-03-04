@@ -19,7 +19,7 @@ We willen een robotarm maken en hiermee kunnen werken. Deze robotarm moet bestuu
 
 ## Mindmap
 
-![Getting Started](./Mindmapchart.png)
+![Getting Started](./img_analyse/Mindmapchart.png)
 
 ## Beschrijving
 
