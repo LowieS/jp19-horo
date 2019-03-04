@@ -19,7 +19,7 @@ We willen een robotarm maken en hiermee kunnen werken. Deze robotarm moet bestuu
 
 ## Mindmap
 
-![Getting Started](./img_analyse/Mindmapchart.png)
+![Mindmap](./img_analyse/Mindmapchart.png)
 
 ## Beschrijving
 
@@ -35,26 +35,22 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 ### Hardware diagram
 
-![Getting Started](./hardware_spec.jpg)
+![Hardware diagram](./img_analyse/hardware_spec.jpg)
 
 ### Hardware argumentaie
-![Getting Started](./argumenatie1.PNG)
-![Getting Started](./argumenatie2PNG.PNG)
+![Hardware argumentatie](./img_analyse/argumenatie1.PNG)
+![Hardware argumentatie](./img_analyse/argumenatie2PNG.PNG)
 ### Hardware specs
-![Getting Started](./deel1.PNG)
-![Getting Started](./deel2.PNG)
+![Hardware specs](./img_analyse/deel1.PNG)
+![Hardware specs](./img_analyse/deel2.PNG)
 
-![Getting Started](./deel3.PNG)
-![Getting Started](./deel4.PNG)
-
-
- 
- 
+![Hardware specs](./img_analyse/deel3.PNG)
+![Hardware specs](./img_analyse/deel4.PNG)
 
 ## Software analyse
 
 
-![Getting Started](./Softwareanalyse.png)
+![Software analyse](./img_analyse/Softwareanalyse.png)
 
 
 ## ROS analyse
