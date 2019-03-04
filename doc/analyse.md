@@ -19,7 +19,7 @@ We willen een robotarm maken en hiermee kunnen werken. Deze robotarm moet bestuu
 
 ## Mindmap
 
-![Mindmap](./img_analyse/Mindmapchart.png)
+![Mindmap](./img/img_analyse/Mindmapchart.png)
 
 ## Beschrijving
 
@@ -35,22 +35,39 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
 
 ### Hardware diagram
 
-![Hardware diagram](./img_analyse/hardware_spec.jpg)
+![Hardware map](./img/img_analyse/Hardwaremap.PNG)
+![Hardware diagram](./img/img_analyse/hardware_spec.jpg)
 
 ### Hardware argumentaie
-![Hardware argumentatie](./img_analyse/argumenatie1.PNG)
-![Hardware argumentatie](./img_analyse/argumenatie2PNG.PNG)
+![Hardware argumentatie](./img/img_analyse/argumenatie1.PNG)
+![Hardware argumentatie](./img/img_analyse/argumenatie2PNG.PNG)
 ### Hardware specs
-![Hardware specs](./img_analyse/deel1.PNG)
-![Hardware specs](./img_analyse/deel2.PNG)
+![Hardware specs](./img/img_analyse/deel1.PNG)
+![Hardware specs](./img/img_analyse/deel2.PNG)
 
-![Hardware specs](./img_analyse/deel3.PNG)
-![Hardware specs](./img_analyse/deel4.PNG)
+![Hardware specs](./img/img_analyse/deel3.PNG)
+![Hardware specs](./img/img_analyse/deel4.PNG)
 
 ## Software analyse
 
 
-![Software analyse](./img_analyse/Softwareanalyse.png)
+![Software analyse](./img/img_analyse/Softwareanalyse.png)
+
+###State diagram
+ ![State diagram](./img/img_analyse/Softwaremap.PNG)
+
+ ###Flowchart
+ ####Volledige flowchart
+ ![Flowchart](./img/img_analyse/Flowchart.PNG)
+
+ ####Flowchart van de Hololens
+ ![Hololens Flowchart](./img/img_analyse/HoloLensflow.PNG)
+
+ ####Flowchart Raspberry PI
+ ![raspberry flowchart](./img/img_analyse/raspberryflow.PNG)
+
+ ####Flowchart Arduino
+ ![arduino flowchart](./img/img_analyse/ArduinoFlow.PNG)
 
 
 ## ROS analyse
