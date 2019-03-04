@@ -64,7 +64,7 @@ De robotarm zal hierdoor dan ook de virtuele blokken kunnen "detecteren", eigenl
  ![Hololens Flowchart](./img/img_analyse/HoloLensflow.png)
 
  #### Flowchart Raspberry PI
- ![raspberry flowchart](./img/img_analyse/raspberryflow.png)
+ ![raspberry flowchart](./img/img_analyse/Raspberryflow.png)
 
  #### Flowchart Arduino
  ![arduino flowchart](./img/img_analyse/ArduinoFlow.png)
