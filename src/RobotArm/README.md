@@ -20,8 +20,9 @@ Er is nog niet besloten wat voor een soort arm we gaan gebruiken. De opties zijn
 We zullen een end effector van het type gripper gebruiken voor de robotarm. De hoeveelheid vingers is nog niet beslist.
     In de meeste industriële toepassingen wordt gekozen voor een 2-vingerige end effector, maar dit staat niet vast.
 
-https://blog.robotiq.com/bid/72863/End-Effector-Gripping-Strategies 
-https://en.wikipedia.org/wiki/Robot_end_effector
+ivm krachtsberekeningen en de arm:
+* https://blog.robotiq.com/bid/72863/End-Effector-Gripping-Strategies 
+* https://en.wikipedia.org/wiki/Robot_end_effector
 
 ## Krachtsberekeningen
 
@@ -30,7 +31,7 @@ https://en.wikipedia.org/wiki/Robot_end_effector
 ## Specificaties
 Bereik (in degrees of freedom):
 
--> Er zijn 3 verschillende fasen bij deze degrees of freedom:
-    - Maximum enveloppe: De maximale bewegingsradius van de robotarm.
-    - Restricted enveloppe: De bewegingsradius die door het programma dat op de robotarm staat zal worden gebruikt.
-    - Operating enveloppe: De zone waar de robotarm zich in een specifieke momentopname in bevindt.
+Er zijn 3 verschillende fasen bij deze degrees of freedom:
+* Maximum enveloppe: De maximale bewegingsradius van de robotarm.
+* Restricted enveloppe: De bewegingsradius die door het programma dat op de robotarm staat zal worden gebruikt.
+* Operating enveloppe: De zone waar de robotarm zich in een specifieke momentopname in bevindt.
