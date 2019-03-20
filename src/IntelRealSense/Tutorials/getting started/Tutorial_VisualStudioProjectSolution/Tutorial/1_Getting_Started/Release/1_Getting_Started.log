@@ -1,0 +1,2 @@
+﻿  main_getting_started.cpp
+c:\users\michi\onedrive\documents\github\jp19-jp19-horo\src\intelrealsense\tutorials\getting started\tutorial_visualstudioprojectsolution\tutorial\1_getting_started\main_getting_started.cpp(19): fatal error C1083: Cannot open include file: 'pxcsensemanager.h': No such file or directory
