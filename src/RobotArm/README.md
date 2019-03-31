@@ -35,3 +35,52 @@ Er zijn 3 verschillende fasen bij deze degrees of freedom:
 * Maximum enveloppe: De maximale bewegingsradius van de robotarm.
 * Restricted enveloppe: De bewegingsradius die door het programma dat op de robotarm staat zal worden gebruikt.
 * Operating enveloppe: De zone waar de robotarm zich in een specifieke momentopname in bevindt.
+
+
+## De arm die wij gaan gebruiken
+We gaan voor een articulated design van de robotarm zelf. Dit komt het beste uit m.b.t. de servo-motoren (?types moeten nog opgezocht worden!) en de vele bewegingen die moeten worden uitgevoerd door de arm. 
+
+Voor de end effector zouden we kunnen gaan voor een hand met 2 vingers, dit wordt in de meeste industriële toepassingen het meest gebruikt.
+
+Berekeningen:
+* F = ((m * a)/(µ * n))
+Waarbij:
+* F de kracht van de grip op het object is
+* m de massa van het object
+* a de versnelling van het object
+* µ de coëfficiënt van de frictie het object
+* n is het aantal vingers van de grijphand
+
+Er zullen 6 servos worden gebruikt:
+* 1 voor de horizontale rotatie van de arm
+* 3 voor de 3 verticaal beweegbare delen van de arm te besturen, ieders op een gewricht geplaatst
+* 1 voor de rotatie van de end effector, deze moet ook kunnen meedraaien voor wanneer het doel object "scheef" zou taan t.o.v. de arm.
+* 1 voor de vingers van de end effector te doen openen en dichtdoen.
+
+**Concreet zal de arm dus bestaan uit:**
+* 3 gewrichten verbonden aan elkaar, aan 1 zijde aan het rotatievlak en aan de andere zijde verbonden met de end effector.
+* 6 servos (zoals reeds eerder vermeld).
+
+### Servo's die gebruikt zullen worden:
+We gebruiken de Wantai Stepper Motor 42BYGHM809.
+*Datasheet bijgevoegd in deze map.*
+
+**Specificaties**
+* +/-5% step accuracy
+* Ambient temperature range 20 - 50°C
+* Insulation resistance 100 mega Ohm min 50V DC
+* Step angle: 0,9°
+* 400 steps/revolution (400 stappen per revolutie)
+* Voltage rating 2,7V
+* Current rating 1,68A
+* Inductance: 3,5 mH per coil
+* Temperature rise tolerance: 80°C
+* Holding torque: 4200 g*cm ====//==== 48N.cm volgens https://www.sparkfun.com/products/10846 
+* Detent torque: 260 g*cm
+* Number of leads: 4 (rood, blauw, groen en zwart)
+* Motor length: 4,8cm
+* Nema 17 form factor
+* Weight 340g
+
+*In de volgende tekst is een punt een maalteken, indien er een zineinde is zal dit aangegeven worden door 2 punten op elkaar volgend..*
+De servo kan dus wanneer er geen stroom geleverd wordt een object in stilstand houden aan een kracht van 260 g.cm s.. De maximale torque wanneer er stroom geleverd wordt, en dus de servo de mogelijkheid heeft om het object stil te houden, is gelijk aan 4200 g.cm..
