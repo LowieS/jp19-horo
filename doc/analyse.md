@@ -8,7 +8,7 @@ We willen een robotarm maken en hiermee kunnen werken. Deze robotarm moet bestuu
 * Robotarm laten bewegen
 * Robotarm objecten laten oppakken.
 * Visualiseren op hololens
-* robotarm besturen met de hololens
+* Robotarm besturen met de hololens
 * Programmeren van de robotarm
 * Detecteren van objecten met Intel realsense
 * Connectie tussen  robotarm en hololens

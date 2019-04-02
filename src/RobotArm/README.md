@@ -57,6 +57,8 @@ Er zullen 6 servos worden gebruikt:
 * 1 voor de rotatie van de end effector, deze moet ook kunnen meedraaien voor wanneer het doel object "scheef" zou taan t.o.v. de arm.
 * 1 voor de vingers van de end effector te doen openen en dichtdoen.
 
+De robotarm zal geprint worden met behulp van een 3D printer, het plastic materiaal dat we hiervoor gebruiken moet nog beslist worden in overeenkomst met wat AP hogeschool te bieden heeft.
+
 **Concreet zal de arm dus bestaan uit:**
 * 3 gewrichten verbonden aan elkaar, aan 1 zijde aan het rotatievlak en aan de andere zijde verbonden met de end effector.
 * 6 servos (zoals reeds eerder vermeld).
