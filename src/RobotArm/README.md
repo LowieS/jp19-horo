@@ -58,6 +58,8 @@ Er zullen 6 servos worden gebruikt:
 * 1 voor de vingers van de end effector te doen openen en dichtdoen.
 
 De robotarm zal geprint worden met behulp van een 3D printer, het plastic materiaal dat we hiervoor gebruiken moet nog beslist worden in overeenkomst met wat AP hogeschool te bieden heeft.
+We kunnen gebruik maken van:
+* PET: stijf maar licht van gewicht materiaal dat eveneens sterk en schobestendig is. Is recycleerbaar en laat geen vuile geuren vrij bij hoge temperaturen.
 
 **Concreet zal de arm dus bestaan uit:**
 * 3 gewrichten verbonden aan elkaar, aan 1 zijde aan het rotatievlak en aan de andere zijde verbonden met de end effector.
