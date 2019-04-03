@@ -1,7 +1,7 @@
 import paho.mqtt.publish as publish
 import json
 
-MQTT_SERVER = "192.168.3.3"
+MQTT_SERVER = "192.168.0.69"
 MQTT_PATH = "test_channel"
 
 msg = {"x" : 50, "y" : 30, "z" : 10}
