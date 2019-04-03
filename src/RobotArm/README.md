@@ -59,7 +59,8 @@ Er zullen 6 servos worden gebruikt:
 
 De robotarm zal geprint worden met behulp van een 3D printer, het plastic materiaal dat we hiervoor gebruiken moet nog beslist worden in overeenkomst met wat AP hogeschool te bieden heeft.
 We kunnen gebruik maken van:
-* PET: stijf maar licht van gewicht materiaal dat eveneens sterk en schobestendig is. Is recycleerbaar en laat geen vuile geuren vrij bij hoge temperaturen.
+* PLA: voor de eerste prototypes (de hand die op de huidige robot komt) gebruiken we PLA. Een natuurlijk polymeer dat biologisch afbreekbaar is. Hoge modulus en hoge sterkte. In amorfe toestand zacht boven ca. 55 °C, maar indien semi-kristallijn bruikbaar tot hogere temperatuur. Rek bij breuk vrij laag, maar afhankelijk van MW.
+* ABS: Het materiaal is mechanisch sterk waardoor je je geen zorgen hoeft te maken over de levensduur van jouw 3D geprinte model. Niet biologisch afbreekbaar en heeft een specifieke manier van voorbereiden nodig wanneer het wordt gebruikt voor 3D printen. Zal gebruikt worden voor de uiteindelijk robotarm.
 
 **Concreet zal de arm dus bestaan uit:**
 * 3 gewrichten verbonden aan elkaar, aan 1 zijde aan het rotatievlak en aan de andere zijde verbonden met de end effector.
