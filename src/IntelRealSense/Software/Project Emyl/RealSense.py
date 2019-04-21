@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt           # 2D plotting library producing public
 import pyrealsense2 as rs                 # Intel RealSense cross-platform open-source API
 import math
 
+# install cv2 and numpy : pip install opencv-pyhton
+# install matplotlib : python -m pip install -U matplotlib
+
 try:
     # Create a context object. This object owns the handles to all connected realsense devices
     pipeline = rs.pipeline()
