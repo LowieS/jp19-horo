@@ -37,12 +37,21 @@ namespace M2MqttUnity.Examples
             if (client != null)
             {
                 if (send){
-                    client.Publish("test_channel", System.Text.Encoding.UTF8.GetBytes("test van Emyl"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+                    Coordinaten coordinaten = new Coordinaten();
+                    coordinaten.Y = 12;
+                    coordinaten.X = 23;
+                    string json = JsonUtility.ToJson(coordinaten);
+                    client.Publish("test_channel", System.Text.Encoding.UTF8.GetBytes(json), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
                     Debug.Log("tis verzonden");
                     send = false;
                 }
                 
             }
         }
+    }
+    public class Coordinaten
+    {
+        public int X;
+        public int Y;
     }
 }
