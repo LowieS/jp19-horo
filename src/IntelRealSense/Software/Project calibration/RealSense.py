@@ -5,9 +5,76 @@ import matplotlib.pyplot as plt           # 2D plotting library producing public
 import pyrealsense2 as rs                 # Intel RealSense cross-platform open-source API
 import math
 
+import threading
+try:
+    # for Python2
+    from Tkinter import *
+except ImportError:
+    # for Python3
+    from tkinter import *
+
 # install cv2 and numpy : pip install opencv-pyhton
 # install matplotlib : python -m pip install -U matplotlib
 
+#UI
+################################################################################################
+class Window(Frame):
+    def __init__(self, master=None):
+
+        Frame.__init__(self, master)        
+        self.master = master
+
+        # widget can take all window
+        self.pack(fill=BOTH, expand=1)
+
+        # create button, link it to clickExitButton()
+        exitButton = Button(self, text="Exit", command=self.clickExitButton)
+        rgbButton = Button(self, text="RGB CAM", command=self.clickRgbButton)
+        depthButton = Button(self, text="depth CAM", command=self.clickDepthButton)
+        overlayButton = Button(self, text="overlay CAM", command=self.clickOverlayButton)
+
+        # place button at (0,0)
+        rgbButton.grid(row=1, column=0)
+        depthButton.grid(row=2, column=0)
+        overlayButton.grid(row=3, column=0)
+        exitButton.grid(row=5, column=0)
+
+    def clickExitButton(self):
+        exit()
+    
+    def clickRgbButton(self):
+        global windowSelector
+        windowSelector = 1
+        root.destroy()
+        print(windowSelector)
+
+    def clickDepthButton(self):
+        global windowSelector
+        windowSelector = 2
+        root.destroy()
+        print(windowSelector)
+
+    def clickOverlayButton(self):
+        global windowSelector
+        windowSelector = 3
+        root.destroy()
+        print(windowSelector)
+
+windowSelector = 1
+root = Tk()
+app = Window(root)
+root.wm_title("Tkinter button")
+root.config(background="#FFFFFF")
+root.geometry("320x200")
+global windowSelector
+root.mainloop()
+
+
+#White balance
+####################################################################################################
+
+#video stream
+####################################################################################################
 try:
     # Create a context object. This object owns the handles to all connected realsense devices
     pipeline = rs.pipeline()
@@ -15,6 +82,7 @@ try:
     profile = pipeline.get_active_profile()
 
     while True:
+
         # This call waits until a new coherent set of frames is available on a device
         # Calls to get_frame_data(...) and get_frame_timestamp(...) on a device will return stable values until wait_for_frames(...) is called
         frames = pipeline.wait_for_frames()
@@ -50,12 +118,14 @@ try:
         aspect = width / height
         #print(height,expected)
         scale = int(math.ceil(height / expected))
+        print("")
         print("color.shape: " + str(color.shape[:2]))
         print("width: " + str(width))
         print("height: " + str(height))
         print("expected: " + str(expected))
-        print("aspect: " + str(aspect))
-        print("scale: " + str(scale))
+        print("cam: " + str(windowSelector))
+        #print("aspect: " + str(aspect))
+        #print("scale: " + str(scale))
 
         resized_image = cv2.resize(color, (int(round(expected * aspect)),int( expected)))
         crop_start = round(expected * (aspect - 1) / 2)
@@ -76,6 +146,7 @@ try:
         #print(detections)
         length = int(detections.size / 7)
         print("detected objects: " + str(length))
+        print("----------------------")
         if length < 10:
             for x in range(length):
 
@@ -86,10 +157,12 @@ try:
                 xmax  = detections[0,0,x,5]
                 ymax  = detections[0,0,x,6]
 
-                print("----------------------")
+                print("object nr.: " + str(x))
                 print("class name: " + str(label))
                 print("x min: " + str(xmin * expected))
                 print("y min: " + str(ymin * expected))
+                print("x max: " + str(xmax * expected))
+                print("y max: " + str(ymax * expected))
                 print("----------------------")
 
                 className = classNames[int(label)]
@@ -124,24 +197,36 @@ try:
                             cv2.FONT_HERSHEY_COMPLEX, 0.5, (255,255,255))
                         
 
+        if windowSelector == 1:
+            #cv2.namedWindow('RealSense', cv2.WINDOW_AUTOSIZE)
+            cv2.namedWindow('RealSense', cv2.WINDOW_NORMAL)   #cv2.Window normal -> window scaled mee met volgende lijn
+            cv2.resizeWindow('RealSense', 640,480)     #de 2 getallen geven de resolutie van de window weer (= de maximale camera resolutie)
+            cv2.imshow('RealSense', crop_img)
         
-        #cv2.namedWindow('RealSense', cv2.WINDOW_AUTOSIZE)
-        cv2.namedWindow('RealSense', cv2.WINDOW_NORMAL)   #cv2.Window normal -> window scaled mee met volgende lijn
-        cv2.resizeWindow('RealSense', 640,480)     #de 2 getallen geven de resolutie van de window weer (= de maximale camera resolutie)
-        cv2.imshow('RealSense', crop_img)
+        if windowSelector == 2:
+            cv2.namedWindow('RealSense2', cv2.WINDOW_NORMAL)
+            cv2.resizeWindow('RealSense2',640,480)
+            cv2.imshow('RealSense2',colorized_depth)
         
-        #cv2.namedWindow('RealSense2', cv2.WINDOW_NORMAL)
-        #cv2.resizeWindow('RealSense2',640,480)
-        #cv2.imshow('RealSense2',colorized_depth)
-        
-        #OVERLAY DEPTH MAP ON CAMERA
-        #cv2.namedWindow('RealSense3', cv2.WINDOW_NORMAL)
-        #dst = cv2.addWeighted(crop_img,0.7,colorized_depth,0.3,0)
-        #cv2.resizeWindow('RealSense3',640,480)
-        #cv2.imshow('RealSense3',dst)
+        if windowSelector == 3:
+            #OVERLAY DEPTH MAP ON CAMERA
+            cv2.namedWindow('RealSense3', cv2.WINDOW_AUTOSIZE)
+
+            Transparancy = 0.5
+            width = 640
+            height = 480
+            dim = (width, height)
+
+            # resize image
+            resizedRGB = cv2.resize(crop_img, dim, interpolation = cv2.INTER_AREA)
+            resizedDepth = cv2.resize(colorized_depth, dim, interpolation = cv2.INTER_AREA)
+
+            beta = 1 - Transparancy
+            dst = cv2.addWeighted(resizedDepth,Transparancy,resizedRGB,beta,0)
+            cv2.resizeWindow('RealSense3',640,480)
+            cv2.imshow('RealSense3',dst)
 
         cv2.waitKey(1)
-
 
 
     exit(0)
