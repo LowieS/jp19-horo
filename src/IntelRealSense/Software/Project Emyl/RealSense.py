@@ -26,7 +26,8 @@ try:
         color = np.asanyarray(color_frame.get_data())
         plt.rcParams["axes.grid"] = False
         plt.rcParams['figure.figsize'] = [12, 6]
-        
+        #plt.rcParams['figure.figsize'] = [9, 6]     #figure(figsize=(1,1)) would create an inch-by-inch image, which would be 80-by-80 pixels unless you also give a different dpi argument.
+
         colorizer = rs.colorizer()
         colorized_depth = np.asanyarray(colorizer.colorize(depth_frame).get_data())
         
@@ -42,8 +43,10 @@ try:
         images = np.hstack((color, colorized_depth))
         
         # Standard OpenCV boilerplate for running the net:
+        
         height, width = color.shape[:2]
-        expected = 300.0 #spelen met dit om tot de nauwkeurigste meting te gaan.
+        expected = 300.0 #spelen met dit om tot de nauwkeurigste meting te gaan. 
+        #expected = 720.0 #vermoedlijk is dit gelijk aan de breedte van de frame     
         aspect = width / height
         print(height,expected)
         scale = int(math.ceil(height / expected))
@@ -113,6 +116,9 @@ try:
 
         
         cv2.namedWindow('RealSense', cv2.WINDOW_AUTOSIZE)
+        #cv2.namedWindow('RealSense', cv2.WINDOW_NORMAL)   #cv2.Window normal -> window scaled mee met volgende lijn
+        #cv2.resizeWindow('RealSense', 720,480)     #de 2 getallen geven de resolutie van de window weer (= de maximale camera resolutie)
+        
         cv2.imshow('RealSense', crop_img)
         cv2.namedWindow('RealSense2', cv2.WINDOW_AUTOSIZE)
         cv2.imshow('RealSense2',colorized_depth)
