@@ -32,12 +32,16 @@ class Window(Frame):
         rgbButton = Button(self, text="RGB CAM", command=self.clickRgbButton)
         depthButton = Button(self, text="depth CAM", command=self.clickDepthButton)
         overlayButton = Button(self, text="overlay CAM", command=self.clickOverlayButton)
+        colorFilterButton = Button(self, text="colorFilter CAM", command=self.clickColorFilterButton)
+        contourButton = Button(self, text="contourDetection CAM", command=self.clickContourButton)
 
         # place button at (0,0)
         rgbButton.grid(row=1, column=0)
         depthButton.grid(row=2, column=0)
         overlayButton.grid(row=3, column=0)
-        exitButton.grid(row=5, column=0)
+        colorFilterButton.grid(row=4,column=0)
+        contourButton.grid(row=5, column=0)
+        exitButton.grid(row=10, column=0)
 
     def clickExitButton(self):
         exit()
@@ -57,6 +61,18 @@ class Window(Frame):
     def clickOverlayButton(self):
         global windowSelector
         windowSelector = 3
+        root.destroy()
+        print(windowSelector)
+
+    def clickColorFilterButton(self):
+        global windowSelector
+        windowSelector = 4
+        root.destroy()
+        print(windowSelector)
+
+    def clickContourButton(self):
+        global windowSelector
+        windowSelector = 5
         root.destroy()
         print(windowSelector)
 
@@ -225,6 +241,25 @@ try:
             dst = cv2.addWeighted(resizedDepth,Transparancy,resizedRGB,beta,0)
             cv2.resizeWindow('RealSense3',640,480)
             cv2.imshow('RealSense3',dst)
+
+        if windowSelector == 4:
+
+            lower_red = np.array([000,000,000])
+            upper_red = np.array([120,120,120])
+
+            mask = cv2.inRange(crop_img, lower_red, upper_red)
+            res = cv2.bitwise_and(crop_img,crop_img, mask= mask)
+
+            cv2.namedWindow('RealSense4', cv2.WINDOW_NORMAL)
+            cv2.resizeWindow('RealSense4',640,480)
+            cv2.imshow('RealSense4',res)
+
+        #if windowSelector == 5:
+
+            #https://www.youtube.com/watch?v=_aTC-Rc4Io0
+            #cv2.namedWindow('RealSense5', cv2.WINDOW_NORMAL)
+            #cv2.resizeWindow('RealSense5',640,480)
+            #cv2.imshow('RealSense5',mask)
 
         cv2.waitKey(1)
 
