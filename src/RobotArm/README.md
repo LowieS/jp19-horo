@@ -1,9 +1,16 @@
 # Smart System - Hololens Robotarm
 
 ## Summary
-In dit bestand zal de volledige tekst en uitleg te vinden zijn over de robotarm.
+Voor dit project zijn verschillende zaken en objecten die een belangrijke werking en functie hebben in het volledige plaatje van het project. In dit deel wordt uitgelegd wat de gedachtegang was omtrent de robotarm en hoe (én waarom) het is uitgewerkt op deze specifieke manier.
+De vereisten voor de robotarm waren dat er een reikwijdte vanuit de basis was van 0,5m (vanaf heden zal naar dit als de restricted enveloppe worden verwezen)) en dat er dan nog steeds een voorwerp van 1 kilogram kon worden opgetild en verzet worden. Voor de aandrijving van de stepper motoren werken we met een raspberry pi en een specifieke shield voor deze motoren.
+Allereerst is er onderzoek gedaan naar de verschillende soorten robotarmen die er bestaan, de materialen die er tot onze beschikking werden gesteld en de materialen die we eventueel zelf moesten voorzien/3D printen.
+Na dit onderzoek is besloten om een Articulated design voor de robotarm toe te passen met 3 gewrichten en een end-effector met 2 vingers (een end-effector is het uiteinde van de arm waarmee objecten kunnen worden vastgenomen). Er is ook gekozen voor het type gripper voor de end-effector, aangezien andere mogelijkheden niet mogelijk waren wegens te moeilijk/kostelijk. De keuze voor de gripper en 2 vingers geeft ook de meeste opties met betrekking tot het vastgrijpen van verschillende formaten van objecten (denk hierbij aan grote langwerpige objecten die met 4 vingers moeilijk tot onmogelijk vast te grijpen zijn, …).
+[Eerste_schets](./img/eerste_schets.jpg)
+Op de schets valt te zien naar wat voor type arm er gestreefd zou worden. Aangezien dit een eerste, snelle en ruwe schets was is er uiteraard niet veel aandacht gegaan naar het design en de hoe en wat van de arm. De materialen stonden op dit moment nog niet 100% vast namelijk.
+Het maken van een 3D schets is hierna gestart in Autodesk Fusion360. Er is gekozen voor Fusion360 doordat bleek dat dit bij uitstek geschikt was voor het designen van een robotarm en er hier ook veel tutorials over te vinden waren op het internet, wat het leerproces weer vergemakkelijkte. 
+Als stepper motor werd ons de Wantai Stepper Motor 42BYGHM809 aangeboden. Deze stepper motor is van het type nema 17, wat simpelweg de grootte van deze motor weergeeft. Er is ook een datasheet van de stepper motor bijgevoegd in deze repository. Voor het testen van de robot hebben we gebruik gemaakt van de shield en de buffer board, voor de raspberry pi, die ons werd aangeboden door de school. Dit testen van de motoren wordt gedaan zodat na kan worden gegaan wat de maximale kracht is van de stepper motoren. Dit kan dan meegenomen worden in de krachtberekeningen en het design van de robotarm.
+Elke component is dan nagemaakt of gedesigned in Fusion360 om op deze manier een compleet beeld te kunnen geven van de volledige robotarm en zijn afmetingen. De componenten zijn gecombineerd in 1 bestand dat dan de volledige robotarm voorstelt. Uiteraard zijn de componenten ook los te bekijken, maar de robotarm is ook volledig in zijn geheel zichtbaar.
 
-Nog niet zeker of krachtmetingsberekeningen hier ook in zullen worden toegevoegd.
 
 ## De arm
 Er is nog niet besloten wat voor een soort arm we gaan gebruiken. De opties zijn alvast:
@@ -27,6 +34,7 @@ ivm krachtsberekeningen en de arm:
 ## Krachtsberekeningen
 
 *Hangt nog af van de hoeveelheid vingers die gebruikt zullen worden.*
+Er worden 2 vingers gebruikt.
 
 ## Specificaties
 Bereik (in degrees of freedom):
