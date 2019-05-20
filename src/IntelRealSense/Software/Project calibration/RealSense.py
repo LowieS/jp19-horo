@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt           # 2D plotting library producing public
 import pyrealsense2 as rs                 # Intel RealSense cross-platform open-source API
 import math
 
+import paho.mqtt.publish as publish
+import json
+
 import threading
 try:
     # for Python2
@@ -102,6 +105,9 @@ contourCnt = 0      #alleen voor windowselector 5
 #video stream
 ####################################################################################################
 try:
+    x=0
+    MQTT_SERVER = "192.168.0.69"
+    MQTT_PATH = "test_channel"
     # Create a context object. This object owns the handles to all connected realsense devices
     pipeline = rs.pipeline()
     pipeline.start()
@@ -152,6 +158,7 @@ try:
         print("cam: " + str(windowSelector))
         #print("aspect: " + str(aspect))
         #print("scale: " + str(scale))
+        x=x+1
 
         resized_image = cv2.resize(color, (int(round(expected * aspect)),int( expected)))
         crop_start = round(expected * (aspect - 1) / 2)
@@ -311,7 +318,7 @@ try:
             cv2.imshow('mask rgb',mask)
 
         if windowSelector == 6:
-
+            global x
             blurred_frame = cv2.GaussianBlur(crop_img, (5, 5), 0) #removes noise
 
             lower_red = np.array([0,0,0])           #houd de waarde tussen zwart
@@ -359,17 +366,29 @@ try:
                     box = np.int0(box)
                     cv2.drawContours(crop_img,[box],0,(255,0,0),4)
                     
-                    print("----------------------------------")
-                    print("x center" + str((x + (w/2))*expected))
-                    print("y center" + str((y - (h/2))*expected))
+                    x_waarde = (x + (w/2))*expected
+                    y_waarde = (y - (h/2))*expected
 
-                    print("----------------------------------")
-                    print("blauwe coordinaten")
-                    print(box * expected)
+                    #print("----------------------------------")
+                    #print("x center" + str(x_waarde))
+                    #print("y center" + str(y_waarde))
+
+                    #print("----------------------------------")
+                    #print("blauwe coordinaten")
+                    #print(box * expected)
+            print(str(x))
+            if x > 7000:
+                x_robot = (int(x_waarde/1000)-500)*1.5
+                y_robot = (int(y_waarde/1000)-350)*1.5
+                msg = {"x" : x_robot, "y" : y_robot, "z" : 50}
+                print(json.dumps(msg, sort_keys=True, indent=4))
+                publish.single(MQTT_PATH,payload=json.dumps(msg),hostname=MQTT_SERVER)
+                x = 0
+
 
             cv2.namedWindow('RealSense5', cv2.WINDOW_NORMAL)
             cv2.resizeWindow('RealSense5',640,480)
-            cv2.imshow('RealSense5',crop_img)
+            cv2.imshow('RealSense5',cv2.cvtColor(crop_img, cv2.COLOR_BGR2RGB))
 
             cv2.namedWindow('thresh grey', cv2.WINDOW_NORMAL)
             cv2.resizeWindow('thresh grey',640,480)
