@@ -32,3 +32,10 @@ De broker gebruikt topics voor het filteren van berichten(topics) voor iedere co
 
 De client moet de topics niet creëren voor dat ze er iets op kunnen publishen of aan kunnen subcriben. De broker accepteert elke geldige topic.
 Merk op dat elke topic minstens één karakter moet hebben en ze geen spaties mogen bevatten. Ze zijn ook hoofdletter gevoelig.
+
+## Waarom MQTT
+We hebben voor mqtt gekozen omdat dit een makkelijke manier is om alle apparaten met elkaar te verbinden. We kunnen hierdoor ze allemaal berichten tegelijk sturen of apart door met verschillende topics te werken.
+
+###structuur van de MQTT
+#### basis project (zonder input van de hololens)
+Hierbij is er enkel een verbinding nodig tussen de realsense camera en de robotarm. Wat we willen verwezelijken is dat van de objecten die de realsense detecteert we de 
