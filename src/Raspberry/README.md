@@ -38,4 +38,8 @@ We hebben voor mqtt gekozen omdat dit een makkelijke manier is om alle apparaten
 
 ###structuur van de MQTT
 #### basis project (zonder input van de hololens)
-Hierbij is er enkel een verbinding nodig tussen de realsense camera en de robotarm. Wat we willen verwezelijken is dat van de objecten die de realsense detecteert we de 
+Hierbij is er enkel een verbinding nodig tussen de realsense camera en de robotarm. Wat we willen verwezelijken is dat van de objecten die de realsense detecteert we de coördinaten doorsturen naar de robotarm zodat deze zich naar de objecten beweegt.
+Dit hebben we gedaan door de x,y en z coördinaten in een json bestand weg te schrijven en deze te versturen naar de robotarm waar ze daar de coördinaten uit de json kunnen halen.
+
+#### Eindproject
+We moeten nu de hololens erbij betrekken. Deze moet ook de plaatsen krijgen waar er objecten liggen maar niet in x en y coördinaten maar in procenten dus wat we hiervoor moeten doen is het versturen in een andere topic. De hololens moet deze dan terug sturen naar de realsense, hiervoor hebben we nog een andere topic nodig. Als we nu op software die de realsense aanstuurt hebben nagegaan welk object we hebben geselecteerd moeten we dit dan nog verzenden naar de robotarm zodat deze dat voorwerp kan oppakken.
