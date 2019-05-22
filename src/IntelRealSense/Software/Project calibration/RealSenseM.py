@@ -102,8 +102,6 @@ contourCnt = 0      #alleen voor windowselector 5
 #video stream
 ####################################################################################################
 try:
-    MQTT_SERVER = "192.168.0.69"
-    MQTT_PATH = "test_channel"
     # Create a context object. This object owns the handles to all connected realsense devices
     pipeline = rs.pipeline()
     pipeline.start()
@@ -313,6 +311,7 @@ try:
             cv2.imshow('mask rgb',mask)
 
         if windowSelector == 6:
+
             blurred_frame = cv2.GaussianBlur(crop_img, (5, 5), 0) #removes noise
 
             lower_red = np.array([0,0,0])           #houd de waarde tussen zwart
@@ -360,21 +359,17 @@ try:
                     box = np.int0(box)
                     cv2.drawContours(crop_img,[box],0,(255,0,0),4)
                     
-                    x_waarde = (x + (w/2))*expected
-                    y_waarde = (y - (h/2))*expected
-
                     print("----------------------------------")
-                    print("x center" + str(x_waarde) + "mm " + str(x_waarde / (expected * 10)) + "%" )
-                    print("y center" + str(y_waarde) + "mm " + str(y_waarde / (expected * 10)) + "%" ) #0.75 = 640/480 aspect verhouding
+                    print("x center" + str(((x + (w/2))*expected)/1000) + "mm " + str(((x + (w/2))*expected)/10000000*expected) + "%")
+                    print("y center" + str(((y + (h/2))*expected)/1000) + "mm " + str(((y + (h/2))*expected)/10000000*expected) + "%")
+
                     print("----------------------------------")
                     print("blauwe coordinaten")
                     print(box * expected)
 
-
-
             cv2.namedWindow('RealSense5', cv2.WINDOW_NORMAL)
             cv2.resizeWindow('RealSense5',640,480)
-            cv2.imshow('RealSense5',cv2.cvtColor(crop_img, cv2.COLOR_BGR2RGB))
+            cv2.imshow('RealSense5',crop_img)
 
             cv2.namedWindow('thresh grey', cv2.WINDOW_NORMAL)
             cv2.resizeWindow('thresh grey',640,480)
