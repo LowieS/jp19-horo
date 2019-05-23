@@ -34,7 +34,6 @@ gehele getallen (dus de 3 bytes optellen en kijken naar de sign byte) en dan
 deze 3 gehele getallen omvormen naar servo motor posities via een library die
 driehoeks wiskunde uitvoert.
 
-![](media/c0258f3d4c7cc4111cda838b649d32ba.png)
 
 De Arduino kunnen we in ons afgewerkte project geheel laten vallen. De
 Raspberry-Pi zelf is helemaal instaat om zelf deze berekeningen uit te voeren en
