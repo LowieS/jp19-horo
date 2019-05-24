@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/M2MqttUnity/Examples/Scenes/Emyl_Test.unity
+  isLoaded: 1
+  isActive: 1
