@@ -31,6 +31,14 @@ using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 using M2MqttUnity;
 
+using System.Linq;
+using System.Text;
+using System.Net;
+
+
+
+
+
 /// <summary>
 /// Examples for the M2MQTT library (https://github.com/eclipse/paho.mqtt.m2mqtt),
 /// </summary>
@@ -53,16 +61,14 @@ namespace M2MqttUnity.Examples
         public Button testPublishButton;
         public Button clearButton;
 
+        public delegate void MessageRecive(double procentX,double procentY);
+        public static event MessageRecive Message;
+
         private string channel = "test_channel";
         private List<string> eventMessages = new List<string>();
         private bool updateUI = false;
 
-        public void TestPublish()
-        {
-            client.Publish(channel, System.Text.Encoding.UTF8.GetBytes("Test message"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            Debug.Log("Test message published");
-            AddUiMessage("Test message published.");
-        }
+       
 
         public void SetBrokerAddress(string brokerAddress)
         {
@@ -115,10 +121,7 @@ namespace M2MqttUnity.Examples
             base.OnConnected();
             SetUiMessage("Connected to broker on " + brokerAddress + "\n");
 
-            if (autoTest)
-            {
-                TestPublish();
-            }
+          
         }
 
         protected override void SubscribeTopics()
@@ -202,7 +205,7 @@ namespace M2MqttUnity.Examples
             autoConnect = true;
             updateUI = true;
             base.Start();
-            TestPublish();
+            
             UpdateUI();
         }
 
@@ -210,15 +213,14 @@ namespace M2MqttUnity.Examples
         {
             string msg = System.Text.Encoding.UTF8.GetString(message);
             Debug.Log("Received: " + msg);
-            StoreMessage(msg);
-            if (topic == channel)
-            {
-                if (autoTest)
-                {
-                    autoTest = false;
-                    Disconnect();
-                }
-            }
+            string[] coords = msg.Split(',');
+            Debug.Log(coords[0]);
+            Debug.Log(coords[1]);
+            
+
+            if (Message != null)
+                Message(Convert.ToDouble(coords[0]), Convert.ToDouble(coords[1]));
+
         }
 
         private void StoreMessage(string eventMsg)

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using M2MqttUnity.Examples;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -34,7 +35,22 @@ public class WorldCursor : MonoBehaviour {
     KeywordRecognizer keywordRecognizer = null;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
 
+    public double procentX { get; set; }
+    public double procentY { get; set; }
 
+    void OnEnable()
+    {
+        M2MqttUnityTest.Message += SetXY;
+        
+        
+    }
+
+
+    void OnDisable()
+    {
+        M2MqttUnityTest.Message -= SetXY;
+        //unsubscribe op het event
+    }
 
     // Use this for initialization
     void Start()
@@ -43,6 +59,8 @@ public class WorldCursor : MonoBehaviour {
         meshRenderer = this.gameObject.GetComponentInChildren<MeshRenderer>();
         CountCalibration = 0;
         SetupRun = true;
+        procentX = 0.5;
+        procentY = 0.5;
 
         keywords.Add("Reset", () =>
         {
@@ -93,8 +111,10 @@ public class WorldCursor : MonoBehaviour {
                     
                     if (OnTabSetup2 != null)
                         OnTabSetup2(RightDown);
+                    CountCalibration = 0;
+                    SetupRun = false;
 
-                    CalcPlane(0.861, 0.715);
+                    
                      break;
                  default:
                      break;
@@ -114,11 +134,14 @@ public class WorldCursor : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+        if (SetupRun==false)
+        {
+            CalcPlane(procentX, procentY);
+        }
         
             // Do a raycast into the world based on the user's
             // head position and orientation.
-            var headPosition = Camera.main.transform.position;
+        var headPosition = Camera.main.transform.position;
         var gazeDirection = Camera.main.transform.forward;
 
         RaycastHit hitInfo;
@@ -155,8 +178,7 @@ public class WorldCursor : MonoBehaviour {
         if (OnClicked != null)
             OnClicked(TeleportPos);
         
-        CountCalibration = 0;
-        SetupRun = false;
+        
     }
 
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
@@ -166,5 +188,11 @@ public class WorldCursor : MonoBehaviour {
         {
             keywordAction.Invoke();
         }
+    }
+
+    public void SetXY(double X, double Y)
+    {
+        procentX = X;
+        procentY = Y;
     }
 }

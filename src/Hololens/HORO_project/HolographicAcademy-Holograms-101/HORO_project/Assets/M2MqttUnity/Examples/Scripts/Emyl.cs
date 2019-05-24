@@ -38,12 +38,7 @@ namespace M2MqttUnity.Examples
         }
 
         // Update is called once per frame
-        protected override void Update()
-        {
-            base.Update();
-           
-
-        }
+       
 
         public class Coordinaten
         {
