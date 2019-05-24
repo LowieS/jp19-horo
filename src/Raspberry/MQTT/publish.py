@@ -4,7 +4,14 @@ import json
 MQTT_SERVER = "192.168.0.69"
 MQTT_PATH = "test_channel"
 
-msg = {"x" : 50, "y" : 30, "z" : 10}
-print(json.dumps(msg, sort_keys=True, indent=4))
+x = input("geef x waarde: ")
+y = input("geef y waarde: ")
+
+#print(x)
+#x_robot = (int(x)-500)*1.5
+#y_robot = (int(y)-350)*1.5
+
+msg = {"x" : x, "y" : y}
+print(json.dumps(msg, sort_keys=False, indent=4))
 
 publish.single(MQTT_PATH,payload=json.dumps(msg),hostname=MQTT_SERVER)
