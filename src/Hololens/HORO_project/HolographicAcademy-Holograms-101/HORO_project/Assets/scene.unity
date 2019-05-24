@@ -376,7 +376,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095033999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c89d2da73c95bfd4a9d9b5ca9f5826c2, type: 3}
+  m_Script: {fileID: 11500000, guid: bbaa80705124f9e439d56ca6d5e6db69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   brokerAddress: 192.168.0.69
@@ -385,6 +385,15 @@ MonoBehaviour:
   connectionDelay: 500
   timeoutOnConnection: 30000
   autoConnect: 0
+  autoTest: 0
+  consoleInputField: {fileID: 0}
+  encryptedToggle: {fileID: 0}
+  addressInputField: {fileID: 0}
+  portInputField: {fileID: 0}
+  connectButton: {fileID: 0}
+  disconnectButton: {fileID: 0}
+  testPublishButton: {fileID: 0}
+  clearButton: {fileID: 0}
 --- !u!1 &1193474181 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 154114, guid: c8685776cafe5d24493303e077fffcfb, type: 2}
