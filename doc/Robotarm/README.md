@@ -20,11 +20,11 @@ Elke component is dan nagemaakt of gedesigned in Fusion360 om op deze manier een
 
 ## De vereisten
 * De arm moet een reikwijdte hebben van 0,5m (straal).
-* De arm moet 1kg kunnen optillen
+* De arm moet een object van 1kg kunnen optillen op 0,5m afstand.
 
 ## De keuze van de arm
 
-In de robotica komen de volgende typen robotarmen het meest voor:
+Voordat er gekozen kon worden wat het type robotarm zou worden moest er eerst gekeken worden naar de verschillende mogelijkheden. Deze staan hieronder, kort, uitgelegd:
 * **Articulated:** Een armdesign dat bestaat uit 2 of meer (max 10) gewrichten. De arm is verbonden met de basis m.b.v. een draaiend gewricht en de verbinding tussen de verschillende "statische" delen gebeurt ook met deze gewrichten. Elk gewricht wordt gezien als een eigen as, dus hoe meer gewrichten, des te meer assen er gaan zijn. Elke as geeft meer vrijheden of bewegingsmogelijkheden. Meestal zijn er 4 tot 6 assen.
 * **Cartesiaans:** Ook wel rectalineaire of gantry robots genoemd. Ze hebben 3 lineaire gewrichten die het cartesiaanse coördinatenstelsel (x, y en z) gebruiken. Ze kunnen ook een extra gewricht (pols in dit geval) voor rotatie gerelateerde bewegingen. De 3 prismatische gewrichten leveren een een lineaire bewegingen langs de as.
 * **Cylindrisch:** De robot heeft minstens 1 draaibaar gewricht op de basis en 3 prismatische gewrichten om de verschillende "statische" delen te verbinden. Het rotatie gewricht beweegt over de gewrichtsas terwijl de prismatische gewrichten langs gewrichtsas in een lineaire beweging bewegen. Ze opereren in een cylindrische omgeving.
@@ -35,20 +35,12 @@ In de robotica komen de volgende typen robotarmen het meest voor:
 
 Uiteindelijk is gekozen voor het Articulated design, dit omdat hier de meeste voorbeelden van te vinden waren en we hierdoor de kans hadden software van de vorige robotarm te hergebruiken in verband met de servo-aansturingen.
 
+
 ## End effector
 *De end effector is in feite de "hand" van de robotarm.*
 
 Voor de end effector is gekozen voor een hand van het type gripper. Dit door het beperkte budget en de mogelijkheid voor gebruik in veel omstandigheden.
 End effectors van dit type kunnen meerdere vingers hebben (de uiteinden waarmee de objecten worden vastgehouden). We hebben ervoor gekozen om gebruik te maken van 2 vingers, dit door de mogelijkheid om dan objecten van variabele groottes vast te pakken zonder extra moeilijkheden (een balk van oneven lengten oppakken met 4 vingers is moeilijker dan met 2 vingers).
-
-
-## Woordenboek
-Bereik (in degrees of freedom):
-
-Er zijn 3 verschillende fasen bij deze degrees of freedom:
-* Maximum enveloppe: De maximale bewegingsradius van de robotarm.
-* Restricted enveloppe: De bewegingsradius die door het programma dat op de robotarm staat zal worden gebruikt.
-* Operating enveloppe: De zone waar de robotarm zich in een specifieke momentopname in bevindt.
 
 
 ## De arm die wij gaan gebruiken
@@ -96,7 +88,8 @@ We gebruiken de Wantai Stepper Motor 42BYGHM809.
 De servo kan dus wanneer er geen stroom geleverd wordt een object in stilstand houden aan een kracht van 260 g*cm s. De maximale torque wanneer er stroom geleverd wordt, en dus de servo de mogelijkheid heeft om het object stil te houden, is gelijk aan 4200 g*cm.
 
 
-## Krachtsberekeningen
+### Krachtsberekeningen
+#### Oppakken van het object
 Voor de berekeningen omtrent de kracht die nodig is voor het opheffen van het object maken we gebruik van de volgende formules en gegevens:
 ![Formules](./img/Formules.PNG)
 
@@ -116,6 +109,24 @@ Waarbij:
 Echter kan deze formule beter geschreven worden door de versnelling van het object en de valversnelling apart neer te schrijven:
 F = ((m * (a + g))/(µ * n))
 Dit valt evenwaar ook te zien op het fomuleblad. De reden dat we dit doen is dat aangezien de valversnelling een evenredige tegenreactie opwerkt (wanneer het object op de plaat staat) we de totale versnelling moeten onderverdelen in deze "constante" versnelling (tegen de valversnelling in) en de niet constante versnelling (die wordt opgewekt door het bewegen van de robotarm).
+
+Vooralsnog is de versnelling een onbekende in de berekeningen. 
+
+#### De berekening van tandwielratio's
+Voor de berekening van de verhoudingen van de tandwielsnelheden moeten we gebruik maken van de volgende formules:
+* (Niet aangedreven tandwiel)/(Aangedreven tandwiel): het is de bedoeling dat hier het aantal tanden van elk tandwiel door elkaar gedeeld worden. Dit is geldig voor 2 tandwielen.
+* INSERT FOTO: voor 3 tandwielen zijn er dus meerdere formules mogelijk die uiteindelijk tot dezelfde uitkomst zullen leiden.
+
+De bedoeling van de tandwielen in deze formules is mee voor het oppakken van het object. De vingers zullen worden aangedreven door deze tandwielen.
+
+
+## Woordenboek
+Bereik (in degrees of freedom):
+
+Er zijn 3 verschillende fasen bij deze degrees of freedom:
+* Maximum enveloppe: De maximale bewegingsradius van de robotarm.
+* Restricted enveloppe: De bewegingsradius die door het programma dat op de robotarm staat zal worden gebruikt.
+* Operating enveloppe: De zone waar de robotarm zich in een specifieke momentopname in bevindt.
 
 
 ## Bronvermelding
