@@ -113,7 +113,11 @@ Dit valt evenwaar ook te zien op het fomuleblad. De reden dat we dit doen is dat
 Vooralsnog is de versnelling een onbekende in de berekeningen. 
 
 #### De berekening van tandwielratio's
+Voor de berekening van de verhoudingen van de tandwielsnelheden moeten we gebruik maken van de volgende formules:
+* (Niet aangedreven tandwiel)/(Aangedreven tandwiel): het is de bedoeling dat hier het aantal tanden van elk tandwiel door elkaar gedeeld worden. Dit is geldig voor 2 tandwielen.
+* INSERT FOTO: voor 3 tandwielen zijn er dus meerdere formules mogelijk die uiteindelijk tot dezelfde uitkomst zullen leiden.
 
+De bedoeling van de tandwielen in deze formules is mee voor het oppakken van het object. De vingers zullen worden aangedreven door deze tandwielen.
 
 
 ## Woordenboek
