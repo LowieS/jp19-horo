@@ -14,4 +14,4 @@ y = input("geef y waarde: ")
 msg = {"x" : x, "y" : y}
 print(json.dumps(msg, sort_keys=False, indent=4))
 
-publish.single(MQTT_PATH,payload=json.dumps(msg),hostname=MQTT_SERVER)
+publish.single(MQTT_PATH,payload=str(x)+","+str(y),hostname=MQTT_SERVER)
