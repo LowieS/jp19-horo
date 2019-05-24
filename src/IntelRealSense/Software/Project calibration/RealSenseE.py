@@ -30,7 +30,7 @@ def timer():
     while True:
         if timerBool == False : 
             print "Start : %s" % time.ctime()
-            time.sleep( 5 )
+            time.sleep( 15 )
             timerBool = True
             print "End : %s" % time.ctime()
 
@@ -375,7 +375,7 @@ try:
                     cv2.drawContours(crop_img,[box],0,(255,0,0),4)
                     
                     x_waarde = (x + (w/2))*expected
-                    y_waarde = (y + (h/2))*expected
+                    y_waarde = (y - (h/2))*expected
 
                     #print("----------------------------------")
                     #print("x center" + str(x_waarde))
@@ -386,11 +386,12 @@ try:
                     #print(box * expected)
             if timerBool:
                 print("huppa")
-                x_robot = (int(x_waarde/1000)-500)*1.5
-                y_robot = (int(y_waarde/1000)-350)*1.5
+                x_robot = (int(x_waarde/1000)-500)
+                y_robot = (int(y_waarde/1000)-350)
                 msg = {"x" : x_robot, "y" : y_robot, "z" : 50}
                 print(json.dumps(msg, sort_keys=True, indent=4))
                 publish.single(MQTT_PATH,payload=json.dumps(msg),hostname=MQTT_SERVER)
+                timerBool = False
                 
 
             cv2.namedWindow('RealSense5', cv2.WINDOW_NORMAL)
