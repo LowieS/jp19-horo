@@ -4,25 +4,34 @@
 
 Als gebruiker wil je een blok opnemen met een robot arm. Deze blokken worden
 waargenomen door een intel realsense die dan deze informatie doorstuurt naar de
-robot arm. Hierbij willen we nog een input van de user insteken. Deze input
+robot arm. 
+
+> TODO: wat is realsense
+
+Hierbij willen we nog een input van de user insteken. Deze input
 wordt verwerkt via een Microsoft Hololens 1 en doorgestuurd naar de robot arm om
 zo het juiste blokje op te nemen.
+
+> TODO: geef voorbeeld van wat user input is
 
 ![](media/83b10f5c9c219c4e822b426620acda8d.png)
 
 **Wat:**
 
-We maken gebruik van een Hololens dit is een device(bril) dat hologrammen
-projecteert op de glazen van de bril. Deze hologrammen worden geprojecteerd over
-de echte wereld. Dit houd in dat de gebruiker de echte wereld nog kan blijven
+We maken gebruik van een Hololens dit is een device(bril) die hologrammen
+projecteren op de glazen van de bril. Deze hologrammen worden geprojecteerd over
+de echte wereld. Dit houdt in dat de gebruiker de echte wereld nog kan blijven
 zien en dat de hologrammen reageren met die wereld. Ook kan de gebruiker zelf
-omgaan met de hologrammen door ze te kunnen aantikken en verslepen dit noemt men
-mixed-reality. De hololens heeft een aantal basis features dat worden gebruikt
-in dit project:
+omgaan met de hologrammen door ze te kunnen selecteren en verslepen. Dit wordt 
+mixed-reality genoemd. De hololens heeft een aantal basis features die worden gebruikt:
 
 1.  Gesture manager: dit is een feature van de hololens dat handbewegingen
-    analyseert en omzet in input dat hij kan verwerken. Deze zijn airtab, bloom
-    en gaze
+    analyseert en omzet in input dat hij kan verwerken. 
+    
+    De handbewegingen zijn:
+    - airtab > TODO geef definitie van deze handbewegingen!
+    - bloom
+    - gaze
 
     ![D:\\school\\2ea4\\HORO\\doc\\mixed-reality-met-microsoft-hololens-11-638.jpg](media/3d7ba9116a30d182120839e3a690e649.jpg)
 
@@ -43,6 +52,8 @@ in dit project:
 Het project is gemaakt in unity 2017.4.20 met gebruik van VS2017 c\# scripts een
 goede start voor een hololens project Cursus:
 <https://docs.microsoft.com/en-gb/windows/mixed-reality/holograms-101>.
+
+> TODO: beschrijf hoe je unitiy project moet configureren: vanaf opstart unity + welke plugins moet je installeren
 
 De stappen en features van dit project zijn:
 
